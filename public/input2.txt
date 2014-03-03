@@ -1,0 +1,5 @@
+  //Creating a class
+     function Funcion(a, b){
+             this.a = a;
+             this.b = b;
+             };

@@ -8,6 +8,13 @@
 </head>
 
 <body>
+  <script>
+    function dump(fileName) {
+        $.get(fileName, function (data) {
+            $("#INPUT").val(data);
+        });
+    };
+  </script> 
   <h1>Top Down Operator Precedence. Lexical Analysis</h1>
   <p>
     <nav>
@@ -18,9 +25,9 @@
   <h2>Input</h2>
   <br>
   <ul id="menu">
-    <li>Ejemplo1</li>
-    <li>Ejemplo2</li>
-    <li>Ejemplo3</li>
+    <li id="ejemplo1" onclick="dump('input1.txt');">Ejemplo1</li>
+    <li id="ejemplo2" onclick="dump('input2.txt');">Ejemplo2</li>
+    <li id="ejemplo3" onclick="dump('input3.txt');">Ejemplo3</li>
   </ul>
   <br><br><br>
   <p>
