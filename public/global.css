@@ -6,6 +6,31 @@ html *
         padding-right: 10px; vertical-align: top;}
     table {width: 90%; border: 0px; cellpadding: 0px;}
 }
+
+ul#menu {
+ background-color: #66FFCC;
+ -moz-border-radius: 15px;
+ -webkit-border-radius: 15px;
+ border: 5px solid #009900;
+ width: 75%;
+ height: 20px;
+ padding: 5px;
+
+}
+   
+ul#menu li {
+ color: #000;
+ float: left;
+ list-style: none;
+ margin: 0% 13%;
+}
+   
+ul#menu li:hover{
+ color: #aaa073;
+ cursor:pointer;
+}
+
+
 #INPUT 
 {
     border: none; 
