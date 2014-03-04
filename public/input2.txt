@@ -1,5 +1,4 @@
   //Creating a class
-     function Funcion(a, b){
-             this.a = a;
-             this.b = b;
+     function Funcion(a){
+		this.a = a;
              };
