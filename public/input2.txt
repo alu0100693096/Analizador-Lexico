@@ -1,4 +1,5 @@
-  //Creating a class
-     function Funcion(a){
+
+     var f = function(a){
 		this.a = a;
+                return this.nombre;
              };

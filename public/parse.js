@@ -308,7 +308,9 @@ var make_parse = function () {
 
     infix("%", 60);
     infix("*", 60);
-    infix("/", 60);
+    infixr("/", 60);
+
+    
 
     infix(".", 80, function (left) {
         this.first = left;

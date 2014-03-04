@@ -2,5 +2,4 @@
      var b = function(x) {
              var c = 3;
                return x+c;
-               // Hi
              };
