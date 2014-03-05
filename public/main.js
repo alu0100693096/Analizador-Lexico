@@ -1,4 +1,14 @@
-Object.prototype.error = function (message, t) {
+/*jslint evil: true */
+
+/*members create, error, message, name, prototype, stringify, toSource,
+    toString, write
+*/
+
+/*global JSON, make_parse, parse, source, tree */
+
+// Transform a token object into an exception object and throw it.
+
+Object.constructor.prototype.error = function (message, t) {
     t = t || this;
     t.name = "SyntaxError";
     t.message = message;
@@ -8,12 +18,10 @@ Object.prototype.error = function (message, t) {
 function main() {
     var parse = make_parse();
 
-
     var source = INPUT.value;
     var string, tree;
     try {
         tree = parse(source);
-        
         //string = JSON.stringify(tree, ['type', 'value', 'from', 'to'],  4);
         string = JSON.stringify(tree, ['key', 'name', 'message',
              'value', 'arity', 'first', 'second', 'third', 'fourth'], 4);

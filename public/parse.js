@@ -6,7 +6,7 @@
 // 2010-06-26
 
 var make_parse = function () {
-    var scope;
+    var scope;              // current scope
     var symbol_table = {};
     var token;
     var tokens;
@@ -24,10 +24,12 @@ var make_parse = function () {
             }
             this.def[n.value] = n;
             n.reserved = false;
-            n.nud      = itself;
+            n.nud      = itself; //A nud method is used by values and by prefix operators. 
+                                 //A nud does not care about the tokens to the left.
             n.led      = null;
-            n.std      = null;
-            n.lbp      = 0;
+            n.std      = null;  //callback parsing the kind of statement. Used at the beginning of the staement
+
+            n.lbp      = 0;    // binding power = precedence level
             n.scope    = scope;
             return n;
         },
@@ -166,17 +168,17 @@ var make_parse = function () {
         }
     };
 
-    var symbol = function (id, bp) {
+    var symbol = function (id, bp) { // bp = binding power
         var s = symbol_table[id];
         bp = bp || 0;
         if (s) {
-            if (bp >= s.lbp) {
-                s.lbp = bp;
+            if (bp >= s.lbp) {    // update left binding power
+                s.lbp = bp;       
             }
         } else {
             s = Object.create(original_symbol);
             s.id = s.value = id;
-            s.lbp = bp;
+            s.lbp = bp;           // lbp = left binding power
             symbol_table[id] = s;
         }
         return s;
@@ -287,18 +289,30 @@ var make_parse = function () {
     infixr("&&", 30);
     infixr("||", 30);
 
+    infixr("&", 35);
+    infixr("|", 35);
+    infixr("^", 35);
+
     infixr("===", 40);
     infixr("!==", 40);
+	infixr("==", 40);
+	infixr("!=", 40);
     infixr("<", 40);
     infixr("<=", 40);
     infixr(">", 40);
     infixr(">=", 40);
+    
+    infixr(">>", 45);
+    infixr("<<", 45);
 
     infix("+", 50);
     infix("-", 50);
 
+    infix("%", 60);
     infix("*", 60);
-    infix("/", 60);
+    infixr("/", 60);
+
+    
 
     infix(".", 80, function (left) {
         this.first = left;

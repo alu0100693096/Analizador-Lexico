@@ -1,5 +1,5 @@
-
 desc "Generates out.pdf containing the listings"
+
 task :default do
   #sh "a2ps --columns=1 -f 8 -R *.js *.html -o out.ps"
   sh "a2ps --columns=1 -f 8 -R index.html -o out.ps"

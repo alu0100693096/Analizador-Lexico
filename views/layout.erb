@@ -5,18 +5,12 @@
    <link href="global.css" rel="stylesheet" type="text/css">
    <script src="parse.js"></script>
    <script src="tokens.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
    <script src="main.js"></script>
 </head>
 
 <body>
-  <h1>Lexical Analysis</h1>
-  <h2>Demonstration</h2>
-  <textarea id="INPUT">
-     var a = "hello"; // initialize a
-     var b = (a <= 1)*5; /* initialize b  */
-  </textarea>
-  <br>
-  <input id="_____" value=parse type=button>
-  <pre id=______></pre>
+  <%= yield %>
 </body>
 </html>
