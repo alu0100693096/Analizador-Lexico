@@ -54,6 +54,27 @@ ul#menu li:hover{
 
 }
 
+#PARSE { 
+  padding: 10px;
+  
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 2px solid #DDD;
+  
+  font-weight: bolder;
+}
+
+/* Supress borders after the button is pressed */
+#PARSE:focus {
+  outline:0;
+}
+
+#PARSE:hover {
+  color: white;
+  
+  background-color: #ddd;
+}
+
 /* Contenido propio */
 table.contenido {
   background-color: rgba(0, 0, 0, 0);
@@ -150,4 +171,3 @@ ul#top_menu li:hover{
   
   background-color: #ddd;
 }
-
