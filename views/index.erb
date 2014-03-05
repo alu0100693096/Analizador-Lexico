@@ -1,11 +1,4 @@
-  <script>
-    function dump(fileName) {
-        $.get(fileName, function (data) {
-            $("#INPUT").val(data);
-        });
-    };
-  </script> 
-  
+ 
   <ul id="top_menu">
 	<li style="background-color: #d28282;"><a href="http://javascript.crockford.com/tdop/tdop.html"><img src="assets/logo1.png" width="21" height="21">TDOP Tutorial</a></li>
 	<li style="background-color: #4f9351;"><a href="https://github.com/alu0100693096/Analizador-Lexico"><img src="assets/logo2.png" width="21" height="21">Github</a></li>
@@ -30,12 +23,12 @@
 	    <h2 class="titulo2">Input</h2>
 	    <p>Rellene el cuadro de texto con un bloque de código <i>javascript</i>.</p>
 		<!-- CodeMirror aquí -->
-	    <textarea id="INPUT">
-           var a = "hello"; // initialize a
-           var b = function(x) {
-           var c = 3;
-              return x+c;
-           };
+	    <textarea id="INPUT" name="Code">
+var a = "hello"; // initialize a
+var b = function(x) {
+  var c = 3;
+  return x+c;
+};
         </textarea>
 		<br>
 		<input id="PARSE" value=Parse type=button>
@@ -49,5 +42,19 @@
 	</tr>
   </table>
 
-  <br>
-
+  <!-- Script para el CodeMirror y carga de ficheros -->
+  <script>
+    // Generar un editor CodeMirror a partir del textarea INPUT (se borra y se reemplaza).
+    var editor = CodeMirror.fromTextArea(document.getElementById("INPUT"), {
+      lineNumbers: true,
+      viewportMargin: Infinity
+    });
+	
+    // Véase http://stackoverflow.com/questions/8378678/how-can-i-set-the-value-of-a-codemirror-editor-by-javascript
+    function dump(fileName) {
+      $.get(fileName, function (data) {
+        //$("#INPUT").val(data);
+		  editor.setValue(data);
+      });
+    };
+  </script> 
