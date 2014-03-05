@@ -6,8 +6,8 @@ El objetivo de la práctica consiste en realizar un analizador léxico o parser 
 ## 2. Acceso a la página web ##
 Se puede acceder a la página web de *Heroku* alojada en el siguiente enlace:
 
-- enlace1
-- enlace2
+- Despliegue en Heroku: [http://alu0100699494-pl-prct04.herokuapp.com](http://alu0100699494-pl-prct04.herokuapp.com)
+- Pruebas: [http://alu0100699494-pl-prct04.herokuapp.com/tests.html](http://alu0100699494-pl-prct04.herokuapp.com/tests.html)
 
 ## 3. Dependencias ##
 Se ha hecho uso de la librerías siguientes:

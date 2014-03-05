@@ -6,4 +6,4 @@ var b = function(x) {
 			 
 if(a !== b || a === b) {
   a = 0;
-};
+}
