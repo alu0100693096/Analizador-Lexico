@@ -54,31 +54,6 @@ ul#menu li:hover{
 }
 
 
-a {
-  font-size: x-large;
-  text-decoration:none;
-}
-
-a:link { color:#00FFFF; }
-a:visited { color:black; }
-a:hover{ 
-  background-color:black; 
-  color: #FFF;
-}
-a:active {color:#0000FF;}  /* selected link */
-
-
-
-nav {
-    text-align: center;
-}
-
-nav li {
-    list-style: none;
-    display: inline;
-    margin: 0 1em;
-}
-
 #PARSE { 
   padding: 10px;
   
@@ -145,3 +120,38 @@ table tr td.contenido {
   
   text-shadow: rgba(0, 0, 0, 0.15) 0.1em 0.1em 0.2em;
 }
+
+ul#top_menu {
+  position:absolute;
+  left:0px;
+  top:0px;
+  
+  width: 500px;
+  padding: 0px;
+
+  margin: 0px 0px;
+}
+
+ul#top_menu li{
+  float: left;
+  list-style: none;
+
+  display: inline;
+  list-style-type: none;
+  padding: 10px;
+  
+  text-align: center;
+}
+
+ul#top_menu li a{
+  color: white;
+  text-decoration: none;
+  
+  font-weight: bold;
+}
+
+ul#top_menu li:hover{
+  color: #aaa;
+  cursor:pointer;
+}
+
