@@ -51,28 +51,7 @@ ul#menu li:hover{
     /* padding: 0.5em; */
     width: 100%;
     background-color: #66FFCC; 
-}
 
-
-#PARSE { 
-  padding: 10px;
-  
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  border: 2px solid #DDD;
-  
-  font-weight: bolder;
-}
-
-/* Supress borders after the button is pressed */
-#PARSE:focus {
-  outline:0;
-}
-
-#PARSE:hover {
-  color: white;
-  
-  background-color: #ddd;
 }
 
 /* Contenido propio */
@@ -89,10 +68,6 @@ table.contenido {
 }
 
 table tr.center {
-  text-align: center;
-}
-
-div.center {
   text-align: center;
 }
 
@@ -153,5 +128,26 @@ ul#top_menu li a{
 ul#top_menu li:hover{
   color: #aaa;
   cursor:pointer;
+}
+
+#PARSE { 
+  padding: 10px;
+  
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 2px solid #DDD;
+  
+  font-weight: bolder;
+}
+
+/* Supress borders after the button is pressed */
+#PARSE:focus {
+  outline:0;
+}
+
+#PARSE:hover {
+  color: white;
+  
+  background-color: #ddd;
 }
 
