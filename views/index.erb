@@ -1,37 +1,59 @@
-<!DOCTYPE html>
+  <ul id="top_menu">
+	<li style="background-color: #d28282;"><a href="http://javascript.crockford.com/tdop/tdop.html"><img src="assets/logo1.png" width="21" height="21">TDOP Tutorial</a></li>
+	<li style="background-color: #4f9351;"><a href="https://github.com/alu0100693096/Analizador-Lexico"><img src="assets/logo2.png" width="21" height="21">Github</a></li>
+	<li style="background-color: #6178ba; border-bottom-right-radius: 15px;"><a href="tests.html"><img src="assets/logo3.png" width="21" height="21">Test</a></li>
+  </ul>
+  
+  <table class="contenido">
+    <tr class="center"> 
+	  <td><h1 class="titulo1">Top Down Operator Precedence. Lexical Analysis</h1></td>
+	</tr>
+	<tr>
+	  <td>
+	    <ul id="menu">
+          <li id="ejemplo1" onclick="dump('input1.txt');">Ejemplo1</li>
+          <li id="ejemplo2" onclick="dump('input2.txt');">Ejemplo2</li>
+          <li id="ejemplo3" onclick="dump('input3.txt');">Ejemplo3</li>
+        </ul>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="contenido">
+	    <h2 class="titulo2">Input</h2>
+	    <p>Rellene el cuadro de texto con un bloque de código <i>javascript</i>.</p>
+		<!-- CodeMirror aquí -->
+	    <textarea id="INPUT" name="Code">
+var a = "hello"; // initialize a
+var b = function(x) {
+  var c = 3;
+  return x+c;
+};
+        </textarea>
+		<br>
+		<input id="PARSE" value=Parse type=button>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="contenido">
+	  	<h2 class="titulo2">Tokens</h2>
+	    <pre id=OUTPUT>&lt;Sin parsear&gt;</pre>
+	  </td>
+	</tr>
+  </table>
 
+  <!-- Script para el CodeMirror y carga de ficheros -->
   <script>
+    // Generar un editor CodeMirror a partir del textarea INPUT (se borra y se reemplaza).
+    var editor = CodeMirror.fromTextArea(document.getElementById("INPUT"), {
+      lineNumbers: true,
+      viewportMargin: Infinity
+    });
+	
+    // Véase http://stackoverflow.com/questions/8378678/how-can-i-set-the-value-of-a-codemirror-editor-by-javascript
     function dump(fileName) {
-        $.get(fileName, function (data) {
-            $("#INPUT").val(data);
-        });
+      $.get(fileName, function (data) {
+        //$("#INPUT").val(data);
+		  editor.setValue(data);
+      });
     };
   </script> 
-  <h1>Top Down Operator Precedence. Lexical Analysis</h1>
-  <p>
-    <nav>
-      <a href="http://javascript.crockford.com/tdop/tdop.html" class="mylink">Top Down Operator Precedence tutorial</a>
-      <a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript" class="mylink">Repo at GitHub</a>
-    </nav>
-  </p>
-  <h2>Input</h2>
-  <br>
-  <ul id="menu">
-    <li id="ejemplo1" onclick="dump('input1.txt');">Ejemplo1</li>
-    <li id="ejemplo2" onclick="dump('input2.txt');">Ejemplo2</li>
-    <li id="ejemplo3" onclick="dump('input3.txt');">Ejemplo3</li>
-  </ul>
-  <br><br><br>
-  <p>
-  Fill the input box with javascript code:
-  </p>
-  <textarea id="INPUT">
-     var a = "hello"; // initialize a
-     var b = function(x) {
-             var c = 3;
-               return x+c;
-             };
-  </textarea>
-  <br>
-  <input id="PARSE" value=parse type=button class="mylink">
-  <pre id=OUTPUT></pre>
