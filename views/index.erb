@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <link href="global.css" rel="stylesheet" type="text/css">
-   <script src="parse.js"></script>
-   <script src="tokens.js"></script>
-   <script src="main.js"></script>
-</head>
-
-<body>
   <script>
     function dump(fileName) {
         $.get(fileName, function (data) {
@@ -15,33 +5,50 @@
         });
     };
   </script> 
-  <h1>Top Down Operator Precedence. Lexical Analysis</h1>
+  <table class="contenido">
+    <tr class="center"> 
+	  <td><h1 class="titulo1">Top Down Operator Precedence. Lexical Analysis</h1></td>
+	</tr>
+	<tr>
+	  <td>
+	    <ul id="menu">
+          <li id="ejemplo1" onclick="dump('input1.txt');">Ejemplo1</li>
+          <li id="ejemplo2" onclick="dump('input2.txt');">Ejemplo2</li>
+          <li id="ejemplo3" onclick="dump('input3.txt');">Ejemplo3</li>
+        </ul>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="contenido">
+	    <h2 class="titulo2">Input</h2>
+	    <p>Rellene el cuadro de texto con un bloque de código <i>javascript</i>.</p>
+		<!-- CodeMirror aquí -->
+	    <textarea id="INPUT">
+           var a = "hello"; // initialize a
+           var b = function(x) {
+           var c = 3;
+              return x+c;
+           };
+        </textarea>
+		<br>
+		<input id="PARSE" value=Parse type=button>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="contenido">
+	  	<h2 class="titulo2">Tokens</h2>
+	    <pre id=OUTPUT>&lt;Sin parsear&gt;</pre>
+	  </td>
+	</tr>
+  </table>
+  
+
   <p>
     <nav>
       <a href="http://javascript.crockford.com/tdop/tdop.html" class="mylink">Top Down Operator Precedence tutorial</a>
       <a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript" class="mylink">Repo at GitHub</a>
     </nav>
   </p>
-  <h2>Input</h2>
+
   <br>
-  <ul id="menu">
-    <li id="ejemplo1" onclick="dump('input1.txt');">Ejemplo1</li>
-    <li id="ejemplo2" onclick="dump('input2.txt');">Ejemplo2</li>
-    <li id="ejemplo3" onclick="dump('input3.txt');">Ejemplo3</li>
-  </ul>
-  <br><br><br>
-  <p>
-  Fill the input box with javascript code:
-  </p>
-  <textarea id="INPUT">
-     var a = "hello"; // initialize a
-     var b = function(x) {
-             var c = 3;
-               return x+c;
-             };
-  </textarea>
-  <br>
-  <input id="PARSE" value=parse type=button class="mylink">
-  <pre id=OUTPUT></pre>
-</body>
-</html>
+

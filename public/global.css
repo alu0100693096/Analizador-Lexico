@@ -7,27 +7,37 @@ html *
     table {width: 90%; border: 0px; cellpadding: 0px;}
 }
 
-ul#menu {
- background-color: #66FFCC;
- -moz-border-radius: 15px;
- -webkit-border-radius: 15px;
- border: 5px solid #009900;
- width: 75%;
- height: 20px;
- padding: 5px;
+body {
+  background-color: #f1f1f1;
+}
 
+ul#menu {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #DDD;
+  
+  width: 75%;
+  height: 20px;
+  padding: 5px;
+
+  margin: 2px auto;
 }
    
 ul#menu li {
- color: #000;
- float: left;
- list-style: none;
- margin: 0% 13%;
+  color: #000;
+  float: left;
+  list-style: none;
+  margin: 0% 12%;
+
+  display: inline;
+  text-align: center;
+  
+  font-weight: bolder;
 }
    
 ul#menu li:hover{
- color: #aaa073;
- cursor:pointer;
+  color: #aaa;
+  cursor:pointer;
 }
 
 
@@ -39,14 +49,8 @@ ul#menu li:hover{
     height: 1in;
     overflow: auto;
     /* padding: 0.5em; */
-    width: 80%;
+    width: 100%;
     background-color: #66FFCC; 
-}
-body { background-color: #99FFFF; }
-#OUTPUT 
-{
-    background-color: #66FFCC; 
-    width: 80%;
 }
 
 
@@ -75,13 +79,69 @@ nav li {
     margin: 0 1em;
 }
 
-.mylink {
-  background-color: #66FFCC;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border: 5px solid #009900;
-  padding: 5px;
+#PARSE { 
+  padding: 10px;
+  
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 2px solid #DDD;
+  
+  font-weight: bolder;
 }
 
 /* Supress borders after the button is pressed */
-#PARSE:focus {outline:0; }
+#PARSE:focus {
+  outline:0;
+}
+
+#PARSE:hover {
+  color: white;
+  
+  background-color: #ddd;
+}
+
+/* Contenido propio */
+table.contenido {
+  background-color: rgba(0, 0, 0, 0);
+  width: 1200px;
+  margin-left:auto; 
+  margin-right:auto;
+  
+  /*border: 5px solid black;*/
+  
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+table tr.center {
+  text-align: center;
+}
+
+div.center {
+  text-align: center;
+}
+
+table tr td h1.titulo1 {
+    font-weight: normal;
+    font-size: 42px;
+    background: #232323;
+    padding: 10px 15px;
+    color: white;
+    display:inline-block;
+    border-radius: 10px 10px 10px 10px;
+}
+
+table tr td h2.titulo2 {
+  text-shadow: rgba(0, 0, 0, 0.25) 0.1em 0.1em 0.2em;
+  font-weight: bold;
+}
+
+table tr td.contenido {
+  margin: 15px 10px 15px 10px;
+  padding: 15px;
+
+  background-color: white;
+  border-radius: 15px;
+  
+  text-shadow: rgba(0, 0, 0, 0.15) 0.1em 0.1em 0.2em;
+}
