@@ -31,10 +31,13 @@ String.prototype.tokens = function () {
     var STRING              = /('(\\.|[^'])*'|"(\\.|[^"])*")/g;
     var ONELINECOMMENT      = /\/\/.*/g;
     var MULTIPLELINECOMMENT = /\/[*](.|\n)*?[*]\//g;
-    var TWOCHAROPERATORS    = /([+][+=]|-[-=]|=[=<>]|[<>][=<>]|&&|[|][|])/g;
-    var ONECHAROPERATORS    = /([-+*\/%\^=()&|;:,.<>{}[\]])/g; // May be some character is missing?
+	var THREECHAROPERATORS  = /([!=]==)/g;
+    var TWOCHAROPERATORS    = /([+][+=]|-[-=]|!=|=[=<>]|[<>][=<>]|&&|[|][|])/g;
+    var ONECHAROPERATORS    = /([-+*\/%\^=()&|;:,.<>{}[\]])/g; // May be some character is missing
     var tokens = [WHITES, ID, NUM, STRING, ONELINECOMMENT, 
-                  MULTIPLELINECOMMENT, TWOCHAROPERATORS, ONECHAROPERATORS ];
+                  MULTIPLELINECOMMENT, THREECHAROPERATORS, TWOCHAROPERATORS, ONECHAROPERATORS ];
+				  
+	
 
 
     // Make a token object.
@@ -81,6 +84,10 @@ String.prototype.tokens = function () {
         // string
         else if (m = STRING.bexec(this)) {
             result.push(make('string', getTok().replace(/^["']|["']$/g,'')));
+        } 
+		// three char operator
+		else if (m = THREECHAROPERATORS.bexec(this)) {
+            result.push(make('operator', getTok()));
         } 
         // two char operator
         else if (m = TWOCHAROPERATORS.bexec(this)) {
