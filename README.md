@@ -9,7 +9,15 @@ Se puede acceder a la página web de *Heroku* alojada en el siguiente enlace:
 - enlace1
 - enlace2
 
-## 3. Reparto del trabajo ##
+## 3. Dependencias ##
+Se ha hecho uso de la librerías siguientes:
+
+- [jQuery](http://jquery.com/)
+- [CodeMirror](http://codemirror.net/)
+
+No es necesario descargar ninguna dependencia externa (vienen incluidas en el repositorio, o están referenciadas de manera online).
+
+## 4. Reparto del trabajo ##
 
 Se ha repartido el trabajo de la práctica, de una manera más o menos equitativa, de la siguiente manera:
 
@@ -26,7 +34,7 @@ Se ha repartido el trabajo de la práctica, de una manera más o menos equitativ
 ### Ambos ###
 - Puesta a punto de sinatra y despliegue en heroku.
 
-## 4. Autores ##
+## 5. Autores ##
 Este proyecto ha sido desarrollado, en conjunto, por:
 
 <!-- Tabla -->

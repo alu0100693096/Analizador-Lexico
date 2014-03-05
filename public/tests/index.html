@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+  </head>
+  <body>
+    <!-- Script para el CodeMirror y carga de ficheros -->
+    <script>
+      // Generar un editor CodeMirror a partir del textarea INPUT (se borra y se reemplaza).
+      var editor = CodeMirror.fromTextArea(document.getElementById("INPUT"), {
+        lineNumbers: true,
+        viewportMargin: Infinity
+      });
+	
+      // Véase http://stackoverflow.com/questions/8378678/how-can-i-set-the-value-of-a-codemirror-editor-by-javascript
+      function dump(fileName) {
+        $.get(fileName, function (data) {
+          //$("#INPUT").val(data);
+  		  editor.setValue(data);
+        });
+      };
+    </script> 
+  
+    <div id="mocha"></div>
+	<textarea id="INPUT" name="Code">
+var a = "hello"; // initialize a
+var b = function(x) {
+  var c = 3;
+  return x+c;
+};
+    </textarea>
+		
+    <pre id=OUTPUT>&lt;Sin parsear&gt;</pre>
+	
+	<script src="chai.js"></script>
+    <script src="mocha.js"></script>
+	<script src="../main.js"></script>
+	<script src="../tokens.js"></script>
+	<script src="../parse.js"></script>
+    <script>mocha.setup('tdd')</script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
